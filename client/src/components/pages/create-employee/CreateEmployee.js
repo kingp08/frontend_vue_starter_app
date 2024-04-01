@@ -52,6 +52,7 @@ export default {
           allowEnterKey: true,
           allowEscapeKey: false,
         }).then((data) => {
+          console.log(data);
           this.$router.push({
             name: 'list',
           });

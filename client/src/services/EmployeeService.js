@@ -10,11 +10,11 @@ import Api from './Api';
 export default {
   /**
    * Create a new 'Employee'
-   * (POST): localhost:3001/api/v1/employees
+   * (POST): localhost:8000/api/v1/employees/
    */
   async createNewEmployee(employee) {
     try {
-      const response = await Api().post('/employees', employee);
+      const response = await Api().post('/employees/', employee);
       return response.data;
     } catch (error) {
       if (error.response.status === 409) {
@@ -27,11 +27,12 @@ export default {
 
   /**
    * List All 'Employees'
-   * (GET): localhost:3001/api/v1/employees
+   * (GET): localhost:8000/api/v1/employees/
    */
   async getEmployees() {
     try {
-      const response = await Api().get('/employees');
+      const response = await Api().get('/employees/');
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -41,7 +42,7 @@ export default {
 
   /**
    * List 'Employee' by Id
-   * (GET): localhost:3001/api/v1/employees/:id
+   * (GET): localhost:8000/api/v1/employees/:id/
    */
   async getEmployeeId(id) {
     try {
@@ -58,7 +59,7 @@ export default {
 
   /**
    * Update 'Employee' by Id
-   * (PUT): localhost:3001/api/v1/employees/:id
+   * (PUT): localhost:8000/api/v1/employees/:id/
    */
   async updateEmployee(employee) {
     try {
@@ -76,7 +77,7 @@ export default {
 
   /**
    * Delete 'Employee' by Id
-   * (DELETE): localhost:3001/api/v1/employees/:id
+   * (DELETE): localhost:8000/api/v1/employees/:id/
    */
   async deleteEmployee(id) {
     try {
